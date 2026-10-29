@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Now</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div class="brand">☀️ Weather Now</div>
+      <p>Current weather for the place you choose.</p>
+    </header>
+
+    <form id="weather-form" class="search">
+      <label class="sr-only" for="location-input">Enter a city or location</label>
+      <input
+        type="text"
+        id="location-input"
+        name="location"
+        placeholder="Enter city (e.g. Patna)"
+        autocomplete="off"
+        required
+      />
+      <button type="submit" id="search-button">Get Weather</button>
+    </form>
+
+    <p id="status" class="status" role="status" aria-live="polite">
+      Enter a city or location to check its weather.
+    </p>
+
+    <section id="weather-card" class="weather-card" hidden>
+      <div class="location">
+        <div>
+          <p class="eyebrow">CURRENT WEATHER</p>
+          <h1 id="city"></h1>
+          <p id="local-time" class="muted"></p>
+        </div>
+        <img id="weather-icon" src="" alt="" />
+      </div>
+
+      <div class="temperature">
+        <span id="temperature">--</span><span class="unit">°C</span>
+      </div>
+      <p id="condition" class="condition"></p>
+
+      <div class="details">
+        <article class="detail">
+          <span class="detail-icon" aria-hidden="true">🌡️</span>
+          <div><p>Feels like</p><strong id="feels-like">--°C</strong></div>
+        </article>
+        <article class="detail">
+          <span class="detail-icon" aria-hidden="true">💧</span>
+          <div><p>Humidity</p><strong id="humidity">--%</strong></div>
+        </article>
+        <article class="detail">
+          <span class="detail-icon" aria-hidden="true">💨</span>
+          <div><p>Wind speed</p><strong id="wind">-- km/h</strong></div>
+        </article>
+        <article class="detail">
+          <span class="detail-icon" aria-hidden="true">☀️</span>
+          <div><p>UV index</p><strong id="uv">--</strong></div>
+        </article>
+      </div>
+      <p id="updated" class="updated"></p>
+    </section>
+
+    <footer>
+      Weather data provided by
+      <a href="https://www.weatherapi.com/" target="_blank" rel="noopener noreferrer">WeatherAPI.com</a>
+    </footer>
+  </main>
+</body>
+</html>
